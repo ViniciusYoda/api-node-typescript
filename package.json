@@ -1,0 +1,47 @@
+{
+  "name": "api-rest-node-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vinicius Yoda",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "ts-node-dev ./src/index.ts",
+    "production": "node ./build/index.js",
+    "build": "tsc",
+    "knex:rollback-all": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback --all",
+    "knex:rollback": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
+    "knex:migrate": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",
+    "knex:seed": "knex --knexfile ./src/server/database/knex/Environment.ts seed:run",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "knex": "^3.3.0",
+    "pg": "^8.23.1",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.1",
+    "eslint": "^10.14.0",
+    "jest": "^30.5.2",
+    "sqlite3": "^6.0.1",
+    "supertest": "^7.3.1",
+    "ts-jest": "^29.4.15",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^7.0.2"
+  }
+}
